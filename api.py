@@ -1,11 +1,11 @@
 import requests
 
 class API:
-	def __init__(self, member_id):
-		self.member_id = member_id
+	def __init__(self):
+		pass
 
-	def call_api(self, base_url):
-		url = "{}?member_id={}".format(base_url, self.member_id)
+	def call_api(self, base_url, member_id):
+		url = "{}?member_id={}".format(base_url, member_id)
 		print("url: {}".format(url))
 
 		# Call API and get response
@@ -14,9 +14,14 @@ class API:
 		print(response.json())
 		print("\n")
 
+	def aggregate_apis(self, member_id):
+		pass
 
 
-x = API(1)
-x.call_api("http://127.0.0.1:5000/api1")
-x.call_api("http://127.0.0.1:5000/api2")
-x.call_api("http://127.0.0.1:5000/api3")
+
+x = API()
+x.call_api("http://127.0.0.1:5000/api1", 1)
+x.call_api("http://127.0.0.1:5000/api2", 1)
+x.call_api("http://127.0.0.1:5000/api3", 1)
+
+x.call_api("http://127.0.0.1:5000/api1", 2)
