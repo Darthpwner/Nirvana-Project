@@ -1,4 +1,5 @@
 from flask import Flask, request
+import random
 
 app = Flask(__name__)
 
@@ -27,7 +28,11 @@ def api1():
 	        "oop_max": 5000
 	    }
     else:
-        return "DUMMY API1"
+        return {
+            "deductible": random.randint(0, 10000),
+            "stop_loss": random.randint(0, 10000),
+            "oop_max": random.randint(0, 10000)
+        }
 
 @app.route('/api2', methods=['GET'])
 def api2():
@@ -41,7 +46,11 @@ def api2():
             "oop_max": 6000
         }
     else:
-        return "DUMMY API2"
+        return {
+            "deductible": random.randint(0, 10000),
+            "stop_loss": random.randint(0, 10000),
+            "oop_max": random.randint(0, 10000)
+        }
 
 @app.route('/api3', methods=['GET'])
 def api3():
@@ -55,4 +64,8 @@ def api3():
             "oop_max": 6000
         }
     else:
-        return "DUMMY API3"
+        return {
+            "deductible": random.randint(0, 10000),
+            "stop_loss": random.randint(0, 10000),
+            "oop_max": random.randint(0, 10000)
+        }
