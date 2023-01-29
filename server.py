@@ -5,16 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "Welcome to this test server!"
-
-
-db_users = {
-    "John" : "Miami",
-    "David" : "Miami",
-    "Jane" : "London",
-    "Gabriella" : "Paris",
-    "Tanaka" : "Tokyo"
-}
+    return "Welcome to this test server! There are three possible apis to call: [api1, api2, api3]. Please add the api endpoint and pass in a member_id param i.e. http://127.0.0.1:5000/api1?member_id=1"
 
 @app.route('/api1', methods=['GET'])
 def api1():
