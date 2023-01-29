@@ -27,7 +27,7 @@ def api1():
 	        "oop_max": 5000
 	    }
     else:
-        return "DUMMY"
+        return "DUMMY API1"
 
 @app.route('/api2', methods=['GET'])
 def api2():
@@ -40,6 +40,8 @@ def api2():
             "stop_loss": 13000,
             "oop_max": 6000
         }
+    else:
+        return "DUMMY API2"
 
 @app.route('/api3', methods=['GET'])
 def api3():
@@ -52,3 +54,5 @@ def api3():
             "stop_loss": 10000,
             "oop_max": 6000
         }
+    else:
+        return "DUMMY API3"
