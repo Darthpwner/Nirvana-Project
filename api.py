@@ -12,7 +12,6 @@ class API:
 		response = requests.get(url)
 		print(response.status_code)
 		print(response.json())
-		print("\n")
 
 		return response.json()
 
@@ -35,6 +34,9 @@ class API:
 
 x = API()
 print(x.aggregate_apis(1))
+print("\n")
 print(x.aggregate_apis(2))
+print("\n")
 print(x.aggregate_apis())
+print("\n")
 

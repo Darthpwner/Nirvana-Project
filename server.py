@@ -29,9 +29,9 @@ def api1():
 	    }
     elif member_id.isnumeric():
         return {
-            "deductible": random.randint(0, 10000),
-            "stop_loss": random.randint(0, 10000),
-            "oop_max": random.randint(0, 10000)
+            "deductible": random.randint(0, 100000),
+            "stop_loss": random.randint(0, 100000),
+            "oop_max": random.randint(0, 100000)
         }
     else:
         return "Please enter member_id for api1" 
@@ -49,9 +49,9 @@ def api2():
         }
     elif member_id.isnumeric():
         return {
-            "deductible": random.randint(0, 10000),
-            "stop_loss": random.randint(0, 10000),
-            "oop_max": random.randint(0, 10000)
+            "deductible": random.randint(0, 100000),
+            "stop_loss": random.randint(0, 100000),
+            "oop_max": random.randint(0, 100000)
         }
     else:
         return "Please enter member_id for api2"
@@ -69,9 +69,9 @@ def api3():
         }
     elif member_id.isnumeric():
         return {
-            "deductible": random.randint(0, 10000),
-            "stop_loss": random.randint(0, 10000),
-            "oop_max": random.randint(0, 10000)
+            "deductible": random.randint(0, 100000),
+            "stop_loss": random.randint(0, 100000),
+            "oop_max": random.randint(0, 100000)
         }
     else:
         return "Please enter member_id for api3"
