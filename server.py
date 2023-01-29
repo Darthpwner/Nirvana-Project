@@ -27,12 +27,14 @@ def api1():
 	        "stop_loss": 10000,
 	        "oop_max": 5000
 	    }
-    else:
+    elif member_id.isnumeric():
         return {
             "deductible": random.randint(0, 10000),
             "stop_loss": random.randint(0, 10000),
             "oop_max": random.randint(0, 10000)
         }
+    else:
+        return "Please enter member_id for api1" 
 
 @app.route('/api2', methods=['GET'])
 def api2():
@@ -45,12 +47,14 @@ def api2():
             "stop_loss": 13000,
             "oop_max": 6000
         }
-    else:
+    elif member_id.isnumeric():
         return {
             "deductible": random.randint(0, 10000),
             "stop_loss": random.randint(0, 10000),
             "oop_max": random.randint(0, 10000)
         }
+    else:
+        return "Please enter member_id for api2"
 
 @app.route('/api3', methods=['GET'])
 def api3():
@@ -63,9 +67,11 @@ def api3():
             "stop_loss": 10000,
             "oop_max": 6000
         }
-    else:
+    elif member_id.isnumeric():
         return {
             "deductible": random.randint(0, 10000),
             "stop_loss": random.randint(0, 10000),
             "oop_max": random.randint(0, 10000)
         }
+    else:
+        return "Please enter member_id for api3"

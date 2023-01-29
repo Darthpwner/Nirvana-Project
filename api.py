@@ -9,7 +9,7 @@ class API:
 		print("url: {}".format(url))
 
 		# Call API and get response
-		response = requests.get(base_url)
+		response = requests.get(url)
 		print(response.status_code)
 		print(response.json())
 		print("\n")
