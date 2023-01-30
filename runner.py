@@ -10,17 +10,23 @@ def setup_args():
 
 def main():
 	coalesce = CoalesceAPI()
-
 	args = setup_args()
 
-	print(coalesce.aggregate_apis(args.member_id, mean_config))
-	print("mean_config\n")
-	print(coalesce.aggregate_apis(args.member_id, median_config))
-	print("median_config\n")
-	print(coalesce.aggregate_apis(args.member_id, min_config))
-	print("min_config\n")
-	print(coalesce.aggregate_apis(args.member_id, max_config))
-	print("max_config\n")
+	print("mean_config")
+	print("coalesced result: {}".format(coalesce.aggregate_apis(args.member_id, mean_config)))
+	print("\n")
+
+	print("median_config")
+	print("coalesced result: {}".format(coalesce.aggregate_apis(args.member_id, median_config)))
+	print("\n")
+
+	print("min_config")
+	print("coalesced result: {}".format(coalesce.aggregate_apis(args.member_id, min_config)))
+	print("\n")
+
+	print("max_config")
+	print("coalesced result: {}".format(coalesce.aggregate_apis(args.member_id, max_config)))
+	print("\n")
 
 if __name__ == "__main__":
     main()
