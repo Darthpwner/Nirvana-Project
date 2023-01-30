@@ -1,4 +1,5 @@
 import requests
+import argparse
 
 class API:
 	def __init__(self):
@@ -47,18 +48,18 @@ def median_config(list_of_results, key):
 	return sorted_all_values[mid]
 
 
-x = API()
-print(x.aggregate_apis(1, mean_config))
-print("\n")
+# x = API()
+# print(x.aggregate_apis(1, mean_config))
+# print("\n")
 
-print(x.aggregate_apis(1, median_config))
-print("\n")
+# print(x.aggregate_apis(1, median_config))
+# print("\n")
 
-print(x.aggregate_apis(2, mean_config))
-print("\n")
+# print(x.aggregate_apis(2, mean_config))
+# print("\n")
 
-print(x.aggregate_apis(2, median_config))
-print("\n")
+# print(x.aggregate_apis(2, median_config))
+# print("\n")
 
 
 # print(x.aggregate_apis())
