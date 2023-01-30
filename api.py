@@ -2,7 +2,7 @@ import requests
 import argparse
 import sys
 
-class API:
+class CoalesceAPI:
 	def __init__(self):
 		pass
 
@@ -12,8 +12,7 @@ class API:
 
 		# Call API and get response
 		response = requests.get(url)
-		print(response.status_code)
-		print(response.json())
+		print("JSON: {}".format(response.json()))
 
 		return response.json()
 
