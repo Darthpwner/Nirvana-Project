@@ -1,5 +1,6 @@
 import requests
 import argparse
+import sys
 
 class API:
 	def __init__(self):
@@ -47,21 +48,16 @@ def median_config(list_of_results, key):
 
 	return sorted_all_values[mid]
 
+def min_config(list_of_results, key):
+	min_value = sys.maxsize
+	for i in list_of_results:
+		if i[key] < min_value:
+			min_value = i[key]
+	return min_value
 
-# x = API()
-# print(x.aggregate_apis(1, mean_config))
-# print("\n")
-
-# print(x.aggregate_apis(1, median_config))
-# print("\n")
-
-# print(x.aggregate_apis(2, mean_config))
-# print("\n")
-
-# print(x.aggregate_apis(2, median_config))
-# print("\n")
-
-
-# print(x.aggregate_apis())
-# print("\n")
-
+def max_config(list_of_results, key):
+	max_value = 0
+	for i in list_of_results:
+		if i[key] > max_value:
+			max_value = i[key]
+	return max_value
