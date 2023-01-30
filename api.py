@@ -15,15 +15,15 @@ class API:
 
 		return response.json()
 
-	def aggregate_apis(self, member_id):
+	def aggregate_apis(self, member_id, configuration=None):
 		result1 = self.call_api("http://127.0.0.1:5000/api1", member_id)
 		result2 = self.call_api("http://127.0.0.1:5000/api2", member_id)
 		result3 = self.call_api("http://127.0.0.1:5000/api3", member_id)
+		list_of_results = [result1, result2, result3]
 
-		# TODO: Make this configurable
-		aggregate_deductible = int((result1["deductible"] + result2["deductible"] + result3["deductible"])/3)
-		aggregate_stop_loss = int((result1["stop_loss"] + result2["stop_loss"] + result3["stop_loss"])/3)
-		aggregate_oop_max = int((result1["oop_max"] + result2["oop_max"] + result3["oop_max"])/3)
+		aggregate_deductible = configuration(list_of_results, "deductible")
+		aggregate_stop_loss = configuration(list_of_results, "stop_loss")
+		aggregate_oop_max = configuration(list_of_results, "oop_max")
 
 		return {
 			"deductible": aggregate_deductible,
@@ -31,12 +31,20 @@ class API:
 			"oop_max": aggregate_oop_max
 		}
 
+	def mean_config(self, list_of_results, key):
+		total = 0
+		for i in list_of_results:
+			total += i[key]
+		return int(total/len(list_of_results))
+
 
 x = API()
-print(x.aggregate_apis(1))
+print(x.aggregate_apis(1, x.mean_config))
 print("\n")
+
 print(x.aggregate_apis(2))
 print("\n")
-print(x.aggregate_apis())
-print("\n")
+
+# print(x.aggregate_apis())
+# print("\n")
 
