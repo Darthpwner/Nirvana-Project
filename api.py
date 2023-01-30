@@ -37,13 +37,29 @@ class API:
 			total += i[key]
 		return int(total/len(list_of_results))
 
+	def median_config(self, list_of_results, key):
+		all_values = []
+		mid = int(len(list_of_results)/2)
+		for i in list_of_results:
+			all_values.append(i[key])
+		sorted_all_values = sorted(all_values)
+
+		return sorted_all_values[mid]
+
 
 x = API()
 print(x.aggregate_apis(1, x.mean_config))
 print("\n")
 
-print(x.aggregate_apis(2))
+print(x.aggregate_apis(1, x.median_config))
 print("\n")
+
+print(x.aggregate_apis(2, x.mean_config))
+print("\n")
+
+print(x.aggregate_apis(2, x.median_config))
+print("\n")
+
 
 # print(x.aggregate_apis())
 # print("\n")
