@@ -15,7 +15,7 @@ def main():
     if args.member_id.isnumeric() and int(args.member_id) > 0:
         pass
     else:   # input is non-positive or not an integer
-        print("Please enter a valid member_id")
+        print("Please enter a valid member_id (positive integers only!)")
         return 0
 
     print("mean_config")
